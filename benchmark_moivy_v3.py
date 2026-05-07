@@ -1,37 +1,3 @@
-"""
-=====================
-
-中文说明
---------
-
-PF + metrics -> Runners -> Plotting -> Problem parsing -> main()。
-
-This version extends benchmark_moivy_v2.py with:
-
-1) Harder benchmark suites (DTLZ3/4/7, WFG1-9, ZDT3/4/6, etc.)
-2) Parameterized problem specs from CLI: e.g. "wfg4:3:24" or "dtlz3:2:30"
-3) Plotting for 2 objectives (2D) and 3 objectives (3D + 2D projections)
-
-Why you want this:
-- ZDT1/ZDT2/DTLZ2(2obj) are relatively easy; many algorithms converge similarly.
-- WFG and DTLZ3/4/7 introduce multimodality, deception, bias, disconnected PFs.
-
-Run examples:
-
-  # Hard bi-objective suite (still shows nice 2D true PF overlay)
-  python benchmark_moivy_v3.py --suite hard2 --pop 100 --gen 400 --seeds 1 2 3 4 5 --archive 300 --outdir results_hard2
-
-  # Hard tri-objective suite (3D true PF overlay)
-  python benchmark_moivy_v3.py --suite hard3 --pop 120 --gen 500 --seeds 1 2 3 --archive 400 --outdir results_hard3
-
-  # Custom list ("name[:n_obj:n_var[:k[:l]]]" for WFG)
-  python benchmark_moivy_v3.py --problems zdt4 zdt6 dtlz3:2:30 wfg4:2:24 wfg9:2:24 --pop 120 --gen 400 --outdir results_custom
-
-Outputs:
-- Same folder structure as v2, but problem folder uses a unique "problem_id" so
-  different parameterizations won't overwrite each other.
-"""
-
 from __future__ import annotations
 
 import argparse
