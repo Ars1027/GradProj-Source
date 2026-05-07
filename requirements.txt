@@ -1,0 +1,11 @@
+# HMOIVY 依赖包列表
+# Python >= 3.8
+
+# 核心依赖
+numpy>=1.21.0
+pymoo>=0.6.0
+pandas>=1.3.0
+matplotlib>=3.4.0
+
+# 可选依赖（用于更好的性能）
+# scipy>=1.7.0  # pymoo 可能会用到
